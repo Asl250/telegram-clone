@@ -1,32 +1,29 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import {Space_Grotesk} from 'next/font/google'
+import './globals.css'
+import { ThemeProvider } from '@/components/providers/theme-provider'
+
+import type { Metadata } from 'next'
+import { Space_Grotesk } from 'next/font/google'
 
 const spaceGrotesk = Space_Grotesk({
-  weight: ['300', '400', '500', '600', '700', '300'],
+  weight: ['400', '500', '600', '700', '300'],
   subsets: ['latin'],
-  variable: '--font-spaceGrotesk'
+  variable: '--font-spaceGrotesk',
 })
 
 export const metadata: Metadata = {
-  title: "Telegram Web",
-  description: "Telegram Web Application clone created by ask250",
-  icons: { icon:'/logo.svg' }
-};
+  title: 'Telegram web',
+  description: 'Telegram web application clone created by ask250',
+  icons: { icon: '/logo.svg' },
+}
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        suppressHydrationWarning
-        className={`${spaceGrotesk.variable}  antialiased`}
-      >
-        {children}
-      </body>
+    <html lang='en' suppressHydrationWarning>
+    <body className={`${spaceGrotesk.variable} antialiased`} suppressHydrationWarning>
+    <ThemeProvider attribute='class' defaultTheme='system' enableSystem disableTransitionOnChange>
+      {children}
+    </ThemeProvider>
+    </body>
     </html>
-  );
+  )
 }
