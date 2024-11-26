@@ -21,7 +21,6 @@ const ContactList: FC<Props> = ({ contacts }) => {
 		
 		const onChat = () => {
 			if (currentContact?._id === contact._id) return
-			console.log(contact.email)
 			
 			setCurrentContact(contact)
 			router.push(`/?chat=${contact._id}`)
