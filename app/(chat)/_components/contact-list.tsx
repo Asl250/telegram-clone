@@ -3,7 +3,7 @@
 import Settings from '@/app/(chat)/_components/settings'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Input } from '@/components/ui/input'
-import useCurrentContact from '@/hooks/use-current'
+import { useCurrentContact } from '@/hooks/use-current'
 import { cn } from '@/lib/utils'
 import type { IUser } from '@/types'
 import { useRouter } from 'next/navigation'
