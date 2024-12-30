@@ -1,4 +1,4 @@
-import type { massageSchema } from '@/app/auth/lib/validation'
+import { massageSchema } from '@/app/auth/lib/validation'
 import { Button } from '@/components/ui/button'
 import { Form, FormControl, FormField, FormItem } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
